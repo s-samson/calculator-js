@@ -45,7 +45,7 @@ function handleClick(event)
             break;
     }
 }
-//  Hier Berekent de calculator de Nummers
+//  Hier voert hij de nummers in.
 function handleNumber(el)
 {
     let number=el.innerHTML;
@@ -98,14 +98,14 @@ function handleDot(el){
 // hier cleart hij de calculator
 function handleClear (el) {
     display='0';
-    operator= 0;
+    operator= null;
     firstValue= 0;
     secondValue= 0;
     result= 0;
     displayElement.innerHTML = 0;
     showDisplay;
 }
-
+// dit is de functie om de display te showen
 function showDisplay(){
     displayElement.innerHTML=display;
 }
