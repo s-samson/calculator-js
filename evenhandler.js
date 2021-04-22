@@ -1,5 +1,5 @@
 
-// theme change
+// hier verranderd hij het thema van de calculator
 let headerButton = document.querySelector('body');
 let myButtons = document.querySelector('.themeToggle');
 
@@ -18,35 +18,35 @@ let result= 0;
 let displayElement=document.querySelector('.display');
 let buttonsElement=document.querySelector('.buttons');
 
-buttonsElement.addEventListener('click', handleClick);
+buttonsElement.addEventListener('click', manageClick);
 showDisplay();
 
 // hier kijkt de machine welke event de gebruiker kiest, en roept hij een functie aan.
-function handleClick(event)
+function manageClick(event)
 {
     const element=event.target;
 
     switch(element.className)
     {
         case 'btn-number':
-            handleNumber(element);
+            manageNumber(element);
             break;
         case 'btn-operator':
-            handleOperator(element);
-            break;
-        case 'btn-equal':
-            handleEqual(element);
-            break;
-        case 'btn-clear':
-            handleClear(element);
+            manageOperator(element);
             break;
         case 'btn-dot':
-            handleDot(element);
+            manageDot(element);
+            break;
+        case 'btn-clear':
+            manageClear(element);
+            break;
+        case 'btn-equal':
+            manageEqual(element);
             break;
     }
 }
 //  Hier voert hij de nummers in.
-function handleNumber(el)
+function manageNumber(el)
 {
     let number=el.innerHTML;
 
@@ -60,7 +60,7 @@ function handleNumber(el)
     showDisplay();
 } 
 //  Hier handelt de machine de operater die de gebruiker kiest.
-function handleOperator(el) {
+function manageOperator(el) {
     firstValue = display;
     display = "0";
     operator=el.innerHTML;
@@ -68,7 +68,7 @@ function handleOperator(el) {
 }
 
 // Hier Berekent de calculator de Operators & convert de string naar getallen.
-function handleEqual () {
+function manageEqual () {
     secondValue=display;
     display = "0";
     let one = parseFloat(firstValue);
@@ -87,7 +87,7 @@ function handleEqual () {
 
 }
 // Dit is de functie waarbij je maar 1 dot mag zetten per berekening.
-function handleDot(el){
+function manageDot(el){
     let dot = el.innerHTML;
     if(!display.includes(".")){
         display=display+dot;
@@ -96,7 +96,7 @@ function handleDot(el){
 }
 
 // hier cleart hij de calculator
-function handleClear (el) {
+function manageClear (el) {
     display='0';
     operator= null;
     firstValue= 0;
