@@ -105,7 +105,7 @@ function manageClear (el) {
     displayElement.innerHTML = 0;
     showDisplay;
 }
-// dit is de functie om de display te showen
+// dit is de functie om de display te showen.
 function showDisplay(){
     displayElement.innerHTML=display;
 }
